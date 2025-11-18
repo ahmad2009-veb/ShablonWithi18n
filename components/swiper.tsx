@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import Link from 'next/link';
-const SwiperCom = ({p1,p2,p3}) => {
+const SwiperCom = ({p1,p2,p3}:any) => {
     
   return (
     <div className='md:block hidden'>

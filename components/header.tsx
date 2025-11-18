@@ -27,7 +27,7 @@ const Header = () => {
   return (
     <div>
 
-      <Select onValueChange={changeLang} defaultValue={locale}>
+      <Select onValueChange={changeLang}>
         <SelectTrigger className="w-[180px]">
           <SelectValue placeholder="Select language" />
         </SelectTrigger>
