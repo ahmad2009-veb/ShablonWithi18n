@@ -2,10 +2,24 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ReduxProvider from "./reduxProvider";
-import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { hasLocale, NextIntlClientProvider, useTranslations } from "next-intl";
 import { routing } from "@/src/i18n/routing";
 import { notFound } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
+import img1 from "../../public/image 9.png";
+import img2 from "../../public/Frame 1261154809.png"
+import { getTranslations } from "next-intl/server";
+import Header from "@/components/header";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
+import { Instagram, Menu, Youtube } from "lucide-react";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -29,12 +43,137 @@ export default async function RootLayout({ children, params }: Props) {
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+
+  const t = await getTranslations({ locale, namespace: "header" });
+
   return (
     <html lang={locale}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <div className="w-full border-b border-neutral-700 bg-neutral-900 transition-colors">
+          <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
+            <div className="flex items-center gap-3">
+              <Image
+                src={img1}
+                alt="Logo"
+                className="w-12 h-auto brightness-90"
+              />
+            </div>
+
+            <nav className="hidden md:flex gap-8 text-lg font-medium">
+              <Link href="/" className="hover:text-yellow-400 transition">
+                {t("hm")}
+              </Link>
+              <Link href="#" className="hover:text-yellow-400 transition">
+                {t("kr")}
+              </Link>
+              <Link href="#" className="hover:text-yellow-400 transition">
+                {t("in")}
+              </Link>
+              <Link href="#" className="hover:text-yellow-400 transition">
+                {t("pr")}
+              </Link>
+              <Link href="/news" className="hover:text-yellow-400 transition">
+                {t("nv")}
+              </Link>
+              <Link href="/vakans" className="hover:text-yellow-400 transition">
+                {t("vk")}
+              </Link>
+            </nav>
+
+            <NextIntlClientProvider>
+              <div className="flex items-center gap-4">
+                <Header />
+
+                <Sheet>
+                  <SheetTrigger className="md:hidden text-white">
+                    <Menu size={28} />
+                  </SheetTrigger>
+
+                  <SheetContent className="dark:bg-neutral-900 dark:text-white">
+                    <SheetHeader>
+                      <SheetTitle>{t("hm")}</SheetTitle>
+                    </SheetHeader>
+
+                    <div className="flex flex-col gap-6 mt-6 text-lg">
+                      <Link
+                        href="/"
+                        className="hover:text-yellow-400 transition"
+                      >
+                        {t("hm")}
+                      </Link>
+                      <Link
+                        href="#"
+                        className="hover:text-yellow-400 transition"
+                      >
+                        {t("kr")}
+                      </Link>
+                      <Link
+                        href="#"
+                        className="hover:text-yellow-400 transition"
+                      >
+                        {t("in")}
+                      </Link>
+                      <Link
+                        href="#"
+                        className="hover:text-yellow-400 transition"
+                      >
+                        {t("pr")}
+                      </Link>
+                      <Link
+                        href="/news"
+                        className="hover:text-yellow-400 transition"
+                      >
+                        {t("nv")}
+                      </Link>
+                      <Link
+                        href="/vakans"
+                        className="hover:text-yellow-400 transition"
+                      >
+                        {t("vk")}
+                      </Link>
+                    </div>
+                  </SheetContent>
+                </Sheet>
+              </div>
+            </NextIntlClientProvider>
+          </div>
+        </div>
+
+        <main>{children}</main>
+
+        <footer className="flex flex-col items-center gap-4 mt-4 md:flex-row md:justify-center md:gap-[200px]">
+          <Image src={img1} alt="" className="w-32 h-auto" />
+
+          <div>
+            <nav className="flex flex-col items-center gap-4 text-lg font-medium md:flex-row md:gap-8">
+              <Link href="/" className="hover:text-yellow-400 transition">
+                {t("hm")}
+              </Link>
+              <Link href="#" className="hover:text-yellow-400 transition">
+                {t("kr")}
+              </Link>
+              <Link href="#" className="hover:text-yellow-400 transition">
+                {t("in")}
+              </Link>
+              <Link href="#" className="hover:text-yellow-400 transition">
+                {t("pr")}
+              </Link>
+              <Link href="/news" className="hover:text-yellow-400 transition">
+                {t("nv")}
+              </Link>
+              <Link href="/vakans" className="hover:text-yellow-400 transition">
+                {t("vk")}
+              </Link>
+            </nav>
+          </div>
+
+          <div className="flex gap-4 md:gap-[20px] mt-2 md:mt-0">
+            <Instagram size={32} color="#ff0000" />
+            <Youtube size={32} color="#ff0000" />
+          </div>
+        </footer>
       </body>
     </html>
   );

@@ -1,5 +1,59 @@
 {
-    "home":{
-        "title":"Hello"
-    }
+  "header": {
+    "hm": "Home",
+    "kr": "Coverage Map",
+    "in": "Infrastructure",
+    "pr": "Partners",
+    "nv": "News",
+    "vk": "Vacancies"
+  },
+  "home": {
+    "a1": "«Капитал-Т»",
+    "a2": "Reliable partner for successful business growth",
+    "a3": "Become a partner",
+    "a4": "Contact us",
+    "a5": "Total client base",
+    "a6": "including HoReCa",
+    "a7": "About us",
+    "a8": "We are a leading trading and distribution company specializing in importing and selling a wide range of products throughout Tajikistan",
+    "a9": "Values",
+    "a10": "Commitment to quality service, building client trust, and continuous development. We pride ourselves on being a leading and reliable partner, ensuring the best products are accessible to businesses and people in Tajikistan.",
+    "a11": "Goals",
+    "a12": "Opening of the RCC in GBAO",
+    "a13": "Expanding the portfolio",
+    "a14": "Improving customer service",
+    "a15": "Today, Capital-T is a modern, dynamic company with great potential and prospects.",
+    "a16": "24 years",
+    "a17": "serving cities and districts",
+    "a172": "throughout Tajikistan",
+    "a18": "dedicated employees",
+    "a19": "total volume",
+    "a192": "deliveries per day",
+    "a20": "Main offices",
+    "a21": "Branches with warehouses and sales teams",
+    "a22": "Coverage map",
+    "a23": "Infrastructure",
+    "a24": "warehouse area",
+    "a25": "70 vehicles",
+    "a26": "in our fleet",
+    "a27": "regular clients",
+    "a28": "exclusive contracts",
+    "a29": "covered cities",
+    "a30": "Partners and clients",
+    "a31": "Our portfolio includes world-famous brands whose products are successfully promoted in our market. The main product categories are food and hygiene items.",
+    "a32": "News",
+    "a33": "Title",
+    "a34": "Egestas elit dui scelerisque ut eu purus aliquam vitae habitasse.",
+    "a35": "Подробнее >"
+  },
+  "news": {
+    "b1": "Leading Trade and Distribution Company",
+    "b2": "\"CAPITAL-T\" is one of the largest distribution companies in the Republic of Tajikistan, engaged in wholesale trade and distribution of food products, perfumes and cosmetics, hygiene products, and more.",
+    "b3": "Since 2000, LLC \"CAPITAL-T\" has been developing dynamically, establishing new partnerships, increasing the number of clients, improving the company’s material and technical base, and upgrading software.",
+    "b4": "The company regularly works on expanding its sales geography, aiming to cover remote and hard-to-reach areas of the republic. The organizational structure is changing, and wholesale operations are actively developing.",
+    "b5": "Learn more >",
+    "a33": "Title",
+    "a34": "Egestas elit dui scelerisque ut eu purus aliquam vitae habitasse.",
+    "a35": "Learn more >"
+  }
 }
